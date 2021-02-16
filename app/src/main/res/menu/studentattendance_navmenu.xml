@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_present"
+        android:icon="@drawable/ic_baseline_present"
+        android:title="Present"/><item
+
+    android:id="@+id/nav_late"
+    android:icon="@drawable/ic_baseline_late"
+    android:title="Late"/>
+
+    <item
+        android:id="@+id/nav_absent"
+        android:icon="@drawable/ic_baseline_absent"
+        android:title="Absent"/>
+
+</menu>

@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">MyInternship2.0</string>
+    <string-array name="school_list">
+        <item>BA</item>
+        <item>DE</item>
+        <item>SOE</item>
+        <item>FMS</item>
+        <item>HS</item>
+        <item>HSS</item>
+        <item>ICT</item>
+        <item>LSCT</item>
+    </string-array>
+
+    <string-array name="baCourse_list">
+        <item>ACC</item>
+        <item>BF</item>
+        <item>BS</item>
+        <item>CBP</item>
+        <item>ITB</item>
+        <item>TRM</item>
+    </string-array>
+
+    <string-array name="deCourse_List">
+        <item>DBL</item>
+        <item>REB</item>
+        <item>HLFM</item>
+        <item>SUDE</item>
+        <item>PDI</item>
+    </string-array>
+
+    <string-array name="soeCourse_list">
+        <item>AE</item>
+        <item>EE</item>
+        <item>AMS</item>
+        <item>BE</item>
+        <item>CEP</item>
+        <item>ECE</item>
+        <item>ES</item>
+        <item>MOT</item>
+        <item>ME</item>
+        <item>AE</item>
+        <item>AVT</item>
+        <item>CEM</item>
+        <item>NSS</item>
+    </string-array>
+
+    <string-array name="fmsCourse_list">
+        <item>MPP</item>
+        <item>FSV</item>
+        <item>MC</item>
+        <item>VE</item>
+    </string-array>
+
+    <string-array name="hsCourse_list">
+        <item>NU</item>
+        <item>OPT</item>
+    </string-array>
+
+    <string-array name="hssCourse_list">
+        <item>CD</item>
+        <item>ECDE</item>
+        <item>TSEE</item>
+        <item>ABM</item>
+        <item>CMC</item>
+        <item>CS</item>
+        <item>PS</item>
+        <item>BSE</item>
+    </string-array>
+
+    <string-array name="ictCourse_List">
+        <item>CDF</item>
+        <item>DS</item>
+        <item>IM</item>
+        <item>IT</item>
+        <item>FI</item>
+        <item>ANI</item>
+        <item>IMGD</item>
+    </string-array>
+
+    <string-array name="lsctCourse_list">
+        <item>BMS</item>
+        <item>PHS</item>
+        <item>EWT</item>
+        <item>LDH</item>
+        <item>CBM</item>
+        <item>VB</item>
+        <item>MB</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

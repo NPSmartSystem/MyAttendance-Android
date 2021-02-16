@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StaffAttendanceDataMoreInfo"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="8dp"
+        android:background="@drawable/teachergradcode">
+
+        <ImageView
+            android:id="@+id/staffStudentDataBackArrow2"
+            android:layout_width="52dp"
+            android:layout_height="38dp"
+            app:srcCompat="@drawable/ic_baseline_backarrow" />
+        
+        <TextView
+            android:id="@+id/nowViewing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Now Viewing Attendance Of"
+            android:gravity="center"/>
+        
+        <TextView
+            android:id="@+id/moduleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nowViewing"
+            android:text="Module"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_marginTop="3dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/groupView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/moduleView"
+            android:text="Group"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            />
+
+        <TextView
+            android:id="@+id/classTimeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupView"
+            android:text="Timing"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginBottom="2dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/staffDateChooseLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout"
+        app:layout_constraintVertical_bias="0.607">
+
+        <ImageView
+            android:id="@+id/dateNextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@drawable/ic_round_arrow_roudedarrowright" />
+
+        <ImageView
+            android:id="@+id/datePreviousButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@drawable/ic_round_roundedarrowleft" />
+
+        <TextView
+            android:id="@+id/dateChosenText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:gravity="center"
+            android:text="DATE"
+            android:textColor="#292929"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/dayOfWeekTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:text="DAY"
+            android:layout_below="@id/dateChosenText"
+            android:textColor="#5C5B5B"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/dataViewingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/staffDateChooseLayout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/staffRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/totalDataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total:"
+        android:textColor="#292929"
+        android:layout_marginEnd="16dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/staffStudentDataBottomNav"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dataViewingLayout"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/staffStudentDataBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/teachergradcode"
+        android:padding="2dp"
+        app:itemIconSize="28dp"
+        app:itemIconTint="#fff"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/studentattendance_navmenu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

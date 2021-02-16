@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NpisStudentDataHome"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/teachergradcode"
+        android:gravity="center"
+        android:paddingTop="1dp">
+
+        <TextView
+            android:layout_marginTop="18dp"
+            android:id="@+id/textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Please choose a student"
+            android:layout_marginBottom="10dp"/>
+
+        <Spinner
+            android:layout_below="@id/textview"
+            android:id="@+id/studentDataSpinner"
+            android:gravity="center"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="330dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="8dp"/>
+
+        <ImageView
+            android:id="@+id/npisDatabackarrow"
+            android:layout_width="52dp"
+            android:layout_height="38dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="3dp"
+            app:srcCompat="@drawable/ic_baseline_backarrow" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/logLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/npisBottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.607">
+
+        <ImageView
+            android:id="@+id/datenextbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/presstext"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_round_arrow_roudedarrowright" />
+
+        <ImageView
+            android:id="@+id/datepreviousbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/presstext"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@drawable/ic_round_roundedarrowleft" />
+
+        <TextView
+            android:id="@+id/dateSubmittedLogText"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_toLeftOf="@+id/datenextbutton"
+            android:layout_toRightOf="@id/datepreviousbutton"
+            android:gravity="center"
+            android:text="DATE"
+            android:textColor="#292929"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/presstext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dateSubmittedLogText"
+            android:gravity="center"
+            android:text="press here to choose date"
+            android:textColor="#B8B8B8"
+            android:textSize="9dp"></TextView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_below="@+id/presstext"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/border"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/studentLogDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:hint="No Log Submitted"
+                android:textColor="@color/black"
+                android:textColorHint="#8B2E2E2E"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateSubmittedLogText" />
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/attendanceLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <RelativeLayout
+            android:id="@+id/internPersonalAttendanceLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLayout">
+
+            <ImageButton
+                android:id="@+id/prevMonthButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/calendarLayout"
+                android:backgroundTint="#DCDCDC"
+                app:srcCompat="@drawable/ic_round_arrow_calendarleft" />
+
+            <ImageButton
+                android:id="@+id/nextMonthButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/calendarLayout"
+                android:backgroundTint="#DCDCDC"
+                app:srcCompat="@drawable/ic_round_arrow_calendarright" />
+
+            <TextView
+                android:id="@+id/calendarText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/prevMonthButton"
+                android:layout_alignBottom="@id/prevMonthButton"
+                android:layout_toStartOf="@+id/nextMonthButton"
+                android:layout_toEndOf="@+id/prevMonthButton"
+                android:gravity="center"
+                android:text="MM YYYY"
+                android:textColor="#292929"
+                android:textSize="24sp" />
+
+            <RelativeLayout
+                android:id="@+id/calendarLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="360dp"
+                android:layout_below="@id/prevMonthButton">
+
+
+                <TextView
+                    android:id="@+id/wednesday"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toEndOf="@+id/tuesday"
+                    android:gravity="center"
+                    android:text="W"
+                    android:textColor="#292929"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tuesday"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toEndOf="@+id/monday"
+                    android:gravity="center"
+                    android:text="T"
+                    android:textColor="#292929"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/thursday"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toEndOf="@+id/wednesday"
+                    android:gravity="center"
+                    android:text="T"
+                    android:textColor="#292929"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/monday"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toEndOf="@+id/sunday"
+                    android:gravity="center"
+                    android:text="M"
+                    android:textColor="#292929"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/sunday"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="S"
+                    android:textColor="#292929"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/friday"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toEndOf="@+id/thursday"
+                    android:gravity="center"
+                    android:text="F"
+                    android:textColor="#292929"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/saturday"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toEndOf="@+id/friday"
+                    android:gravity="center"
+                    android:text="S"
+                    android:textColor="#292929"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/customCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/monday"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/colorCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/calendarLayout"
+                android:layout_alignStart="@id/calendarLayout"
+                android:layout_alignEnd="@id/calendarLayout"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/Present"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#2ACC4C"
+                    android:gravity="center"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/presentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/Present"
+                    android:layout_alignBottom="@+id/Present"
+                    android:layout_marginStart="4dp"
+                    android:layout_toEndOf="@+id/Present"
+                    android:gravity="center"
+                    android:text=" Present"
+                    android:textColor="#292929"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/Late"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_toEndOf="@+id/presentText"
+                    android:background="#CC1010"
+                    android:gravity="center"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/Late"
+                    android:layout_alignBottom="@+id/Late"
+                    android:layout_marginStart="4dp"
+                    android:layout_toEndOf="@+id/Late"
+                    android:gravity="center"
+                    android:text=" Late"
+                    android:textColor="#292929"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/Absent"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toStartOf="@+id/absentTextView"
+                    android:background="#5A5A5A"
+                    android:gravity="center"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/absentTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/Absent"
+                    android:layout_alignBottom="@+id/Absent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="4dp"
+                    android:gravity="center"
+                    android:text=" Absent"
+                    android:textColor="#292929"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/colorCode"
+                android:layout_alignStart="@+id/calendarLayout"
+                android:layout_alignEnd="@+id/calendarLayout"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border"
+                android:padding="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/dateLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/leaveLabel"
+                    android:layout_alignEnd="@+id/leaveLabel"
+                    android:text="Date: "
+                    android:textColor="#292929"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/detailsDateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/dateLabel"
+                    android:layout_alignBottom="@id/dateLabel"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@+id/dateLabel"
+                    android:text="Date"
+                    android:textColor="#292929"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/entryLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dateLabel"
+                    android:layout_alignStart="@id/leaveLabel"
+                    android:layout_alignEnd="@+id/leaveLabel"
+                    android:layout_marginTop="8dp"
+                    android:text="Entry Time: "
+                    android:textColor="#292929"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/entryTimeDetailsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/entryLabel"
+                    android:layout_alignBottom="@id/entryLabel"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@+id/entryLabel"
+                    android:text="Entry Time On Day"
+                    android:textColor="#292929"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/leaveLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/entryLabel"
+                    android:layout_marginTop="8dp"
+                    android:text="Leave Time: "
+                    android:textColor="#292929"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/leaveTimeDetailsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/leaveLabel"
+                    android:layout_alignBottom="@id/leaveLabel"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@+id/leaveLabel"
+                    android:text="Leave Time On Day"
+                    android:textColor="#292929"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/npisBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/teachergradcode"
+        android:padding="2dp"
+        app:itemIconSize="28dp"
+        app:itemIconTint="#fff"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/npis_navmenu" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
